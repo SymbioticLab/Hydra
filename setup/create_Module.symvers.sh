@@ -29,7 +29,7 @@
 # Description: creates Module.symvers file for InfiniBand modules 
 
 KVERSION=${KVERSION:-$(uname -r)}
-MOD_SYMVERS=../infiniswap_bd/Module.symvers
+MOD_SYMVERS=../resilience_manager/Module.symvers
 SYMS=./syms
 
 MODULES_DIR=/var/lib/dkms/mlnx-ofed-kernel/kernel-$(uname -r)-x86_64/module

@@ -4,11 +4,11 @@ CFLAGS  := -Wall -Werror -g
 LD      := gcc
 LDLIBS  := ${LDLIBS} -lrdmacm -libverbs -lpthread
 
-APPS    := infiniswap-daemon
+APPS    := resource_monitor
 
 all: ${APPS}
 
-infiniswap-daemon: rdma-common.o infiniswap-daemon.o
+resource_monitor: rdma-common.o daemon.o
 	${LD} -o $@ $^ ${LDLIBS}
 
 clean:

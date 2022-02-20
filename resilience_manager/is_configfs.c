@@ -307,7 +307,7 @@ static struct config_item_type IS_item = {
 static struct configfs_subsystem IS_subsys = {
 		.su_group = {
 				.cg_item = {
-						.ci_namebuf = "infiniswap",
+						.ci_namebuf = "hydra",
 						.ci_type = &IS_item,
 				},
 		},

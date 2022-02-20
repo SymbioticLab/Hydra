@@ -10,8 +10,8 @@ NOSTDINC_FLAGS += @OFED_CFLAGS@
 
 build_dir = /lib/modules/$(shell uname -r)
 
-ismoduledir = /lib/modules/$(shell uname -r)/extra/infiniswap
-ismodule := infiniswap.ko
+ismoduledir = /lib/modules/$(shell uname -r)/extra/hydra
+ismodule := hydra.ko
 issrc := ${PWD}
 ecsrc := ${issrc}/erasure_code
 nbdxadm := ${issrc}/nbdxadm
@@ -32,9 +32,9 @@ uninstall:
 clean:
 	$(MAKE) -C $(build_dir)/build SUBDIRS=`pwd` clean
 
-obj-m := infiniswap.o
+obj-m := hydra.o
 
-infiniswap-objs := 	\
+hydra-objs := 	\
 	is_configfs.o	\
 	is_mq.o	\
 	is_main.o \

@@ -131,8 +131,8 @@ static int gf_gen_decode_matrix(unsigned char *encode_matrix,
 #define PFX		DRV_NAME ": "
 #define DRV_VERSION	"0.0"
 
-MODULE_AUTHOR("Juncheng Gu, Youngmoon Lee, from Sagi Grimberg, Max Gurtovoy");
-MODULE_DESCRIPTION("Infiniswap, remote memory paging over RDMA");
+MODULE_AUTHOR("Juncheng Gu, Youngmoon Lee, Hasan Al Maruf from Sagi Grimberg, Max Gurtovoy");
+MODULE_DESCRIPTION("Hydra, remote memory paging over RDMA");
 MODULE_LICENSE("Dual BSD/GPL");
 MODULE_VERSION(DRV_VERSION);
 
@@ -2134,7 +2134,7 @@ static int __init IS_init_module(void)
 
 	submit_queues = num_online_cpus();
 
-	IS_major = register_blkdev(0, "infiniswap");
+	IS_major = register_blkdev(0, "hydra");
 	if (IS_major < 0)
 		return IS_major;
 
@@ -2150,7 +2150,7 @@ static void __exit IS_cleanup_module(void)
 	struct IS_session *IS_session, *tmp;
 	pr_info("%s\n", __func__);
 
-	unregister_blkdev(IS_major, "infiniswap");
+	unregister_blkdev(IS_major, "hydra");
 
 	list_for_each_entry_safe(IS_session, tmp, &g_IS_sessions, list) {
 		IS_session_destroy(IS_session);
